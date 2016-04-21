@@ -4,9 +4,9 @@ Downloads comic strip panels from GoComics for offline use.
 
 ### Arguments
 
-`%1` - Comic Name
-`%2` - Date Minimum
-`%3` - Date Maximum
+* `%1` - Comic Name
+* `%2` - Date Minimum
+* `%3` - Date Maximum
 
 ### Example
 
