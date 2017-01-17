@@ -56,11 +56,11 @@ namespace GoComicsToGo
 
         private static string GetStripURL(string webpageHTML)
         {
-            Regex regex = new Regex(@"<img alt=""[\w\s]+"" class=""strip"" src=""http:\/\/assets\.amuniversal\.com\/([a-f0-9]{32})"" width=""600"" \/>");
+            Regex regex = new Regex(@"<meta property=""og:image"" content=""(.*)"" \/>");
             Match match = regex.Match(webpageHTML);
             if (match.Groups.Count == 2 && match.Groups[0].Success && match.Groups[1].Success)
             {
-                return string.Format("http://assets.amuniversal.com/{0}", match.Groups[1].Value);
+                return match.Groups[1].Value;
             }
             else
             {
